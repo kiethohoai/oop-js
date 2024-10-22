@@ -107,7 +107,7 @@ mer.accelerate();
 mer.accelerate(); */
 
 //todo 010 ES6 Classes
-
+/* 
 class PersonCl {
   constructor(fName, bYear) {
     this.fName = fName;
@@ -166,8 +166,9 @@ console.log(walter.fName);
 //  * 1. Classes are NOT hoisted
 //  * 2. Classes are first-class citizens
 //  * 3. Classes are executed in strict mode
+ */
 
-console.log(`=======================`);
+/* console.log(`=======================`);
 //todo 011 Setters and Getters
 const acc = {
   owner: 'Jonas',
@@ -185,4 +186,27 @@ const acc = {
 console.log(acc);
 console.log(acc.latest);
 acc.latest = 5000;
-console.log(acc.movements);
+console.log(acc.movements); */
+
+console.log(`=======================`);
+//todo 012 Static Methods
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+
+  // Instance Methods
+  this.calcAge = function () {
+    console.log(2024 - this.birthYear);
+  };
+};
+
+const john = new Person('John', 1994);
+console.log(`🚀  john =>`, john);
+john.calcAge();
+
+// Static Methods
+Person.hey = function () {
+  console.log(`Hi there 🤣🤣🤣`);
+  console.log(this);
+};
+Person.hey();

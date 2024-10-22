@@ -7,3 +7,4 @@
 009 Coding Challenge #1
 010 ES6 Classes
 011 Setters and Getters
+012 Static Methods
