@@ -6,3 +6,4 @@
 008 Prototypal Inheritance on Built-In Objects
 009 Coding Challenge #1
 010 ES6 Classes
+011 Setters and Getters

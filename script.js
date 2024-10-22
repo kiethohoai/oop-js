@@ -107,6 +107,7 @@ mer.accelerate();
 mer.accelerate(); */
 
 //todo 010 ES6 Classes
+
 class PersonCl {
   constructor(fName, bYear) {
     this.fName = fName;
@@ -125,6 +126,20 @@ class PersonCl {
   greet() {
     console.log(`Hello ${this.fName}`);
   }
+
+  get age() {
+    return 2024 - this.bYear;
+  }
+
+  // Set properties already exists
+  set fName(name) {
+    if (name.includes(' ')) this._fName = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get fName() {
+    return this._fName;
+  }
 }
 
 const john = new PersonCl('John Ho', 1994);
@@ -140,3 +155,34 @@ console.log(PersonCl.prototype);
 // };
 
 john.greet();
+console.log(`john.age: `, john.age);
+console.log(`🚀  john =>`, john);
+
+const walter = new PersonCl('Walter White', 1990);
+console.log(`🚀  walter =>`, walter);
+console.log(walter.fName);
+
+// NOTED:
+//  * 1. Classes are NOT hoisted
+//  * 2. Classes are first-class citizens
+//  * 3. Classes are executed in strict mode
+
+console.log(`=======================`);
+//todo 011 Setters and Getters
+const acc = {
+  owner: 'Jonas',
+  movements: [200, 530, 120, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+console.log(acc);
+console.log(acc.latest);
+acc.latest = 5000;
+console.log(acc.movements);
