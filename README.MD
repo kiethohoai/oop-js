@@ -10,3 +10,4 @@
 012 Static Methods
 013 Object.create
 014 Coding Challenge #2
+015 Inheritance Between Classes Constructor Functions

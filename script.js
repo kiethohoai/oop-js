@@ -254,6 +254,7 @@ mini.init('Nguyen Thi Lan Mai', 1997);
 console.log(`🚀  mini =>`, mini);
 mini.countAge(); */
 
+/* 
 //todo 014 Coding Challenge #2
 class Car {
   constructor(make, speed) {
@@ -285,4 +286,40 @@ const ford = new Car('Ford', 120);
 console.log(`🚀  ford =>`, ford);
 console.log(`🚀speedUS ${ford.speedUS}mi/h`);
 ford.speedUS = 50;
-console.log(`🚀  ford =>`, ford);
+console.log(`🚀  ford =>`, ford); */
+
+//todo 015 Inheritance Between Classes Constructor Functions
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(`Result calcAge: `, 2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+// Linking Prototypes
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}!`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer');
+// console.log(`🚀  mike =>`, mike);
+mike.introduce();
+mike.calcAge();
+console.log(`===============================`);
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+console.log(mike instanceof Student);
+console.log(mike instanceof Person);
+console.log(mike instanceof Object);
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
