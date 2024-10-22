@@ -3,3 +3,4 @@
 005 Constructor Functions and the new Operator
 006 Prototypes
 007 Prototypal Inheritance and The Prototype Chain
+008 Prototypal Inheritance on Built-In Objects
