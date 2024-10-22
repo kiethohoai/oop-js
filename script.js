@@ -30,4 +30,20 @@ const jay = {
 console.log(jay instanceof Person); //False
 console.log(john instanceof Person); //True
 
+console.log(Person.prototype);
+console.log(john.__proto__);
+console.log(Person.prototype === john.__proto__); //True
+console.log(Person.prototype.isPrototypeOf(john)); //True
+console.log(Person.prototype.isPrototypeOf(mini)); //True
+console.log(Person.prototype.isPrototypeOf(Person)); //False
 john.calcAge();
+
+Person.prototype.species = 'Homo Sapiens';
+console.log(john, mini);
+console.log(john.species, mini.species);
+
+console.log(john.hasOwnProperty('fName')); //true
+console.log(john.hasOwnProperty('bYear')); //true
+console.log(john.hasOwnProperty('species')); //false
+
+console.log(`===================================================`);
