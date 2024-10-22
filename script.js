@@ -47,7 +47,9 @@ Person.prototype.species = 'Homo Sapiens';
 // console.log(john.hasOwnProperty('species')); //false
 // ===================================================
 // ===================================================
+
 // Object.prototype (top of prototype chain)
+/* 
 console.log(john.__proto__);
 console.log(john.__proto__.__proto__);
 console.log(john.__proto__.__proto__.__proto__);
@@ -67,4 +69,38 @@ console.log(arr.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(h1);
+ */
 
+//todo 009 Coding Challenge #1
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`${this.make} Current Speed = ${this.speed}km/h`);
+};
+
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(`${this.make} Current Speed = ${this.speed}km/h`);
+};
+
+const bmw = new Car('BMW', 120);
+const mer = new Car('Mercedes', 95);
+
+// Results
+console.log(`🚀  bmw =>`, bmw);
+bmw.accelerate();
+bmw.accelerate();
+bmw.brake();
+bmw.accelerate();
+bmw.accelerate();
+console.log(`===================`);
+console.log(`🚀  mer =>`, mer);
+mer.accelerate();
+mer.accelerate();
+mer.brake();
+mer.accelerate();
+mer.accelerate();
