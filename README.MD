@@ -8,3 +8,4 @@
 010 ES6 Classes
 011 Setters and Getters
 012 Static Methods
+013 Object.create

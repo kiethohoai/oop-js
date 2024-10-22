@@ -187,8 +187,7 @@ console.log(acc);
 console.log(acc.latest);
 acc.latest = 5000;
 console.log(acc.movements); */
-
-console.log(`=======================`);
+/* 
 //todo 012 Static Methods
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
@@ -209,4 +208,29 @@ Person.hey = function () {
   console.log(`Hi there 🤣🤣🤣`);
   console.log(this);
 };
-Person.hey();
+Person.hey(); */
+
+//todo 013 Object.create
+const PersonProto = {
+  calcAge() {
+    console.log(`calcAge: `, 2024 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+steven.name = 'Steven';
+steven.bYear = 1990;
+
+console.log(`🚀  steven =>`, steven);
+steven.calcAge();
+console.log(steven.__proto__);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1997);
+console.log(`🚀  sarah =>`, sarah);
+sarah.calcAge();
