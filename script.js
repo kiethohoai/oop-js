@@ -326,6 +326,7 @@ Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor); */
 
 //todo 016 Coding Challenge #3
+/* 
 // =>Parent
 const Car = function (make, speed) {
   this.make = make;
@@ -370,3 +371,50 @@ console.log(`🚀  tesla =>`, tesla);
 
 tesla.brake();
 tesla.accelerate();
+ */
+
+//todo 017 Inheritance Between Classes ES6 Classes
+
+class PersonCl {
+  constructor(fName, bYear) {
+    this.fName = fName;
+    this.bYear = bYear;
+  }
+
+  init(firstName, birthYear) {
+    this.fName = firstName;
+    this.bYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(`calcAge: `, 2024 - this.bYear);
+  }
+
+  greet() {
+    console.log(`Hello ${this.fName}`);
+  }
+}
+
+class StudentCl extends PersonCl {
+  constructor(fName, bYear, course) {
+    super(fName, bYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(
+      `My name is ${this.fName}, I am ${2024 - this.bYear} & I studying ${
+        this.course
+      }`
+    );
+  }
+
+  calcAge() {
+    console.log(`I am ${2024 - this.bYear} years old now!`);
+  }
+}
+
+const student = new StudentCl('John', 1994, 'Fullstacks Web Developer');
+console.log(`🚀  student =>`, student);
+student.introduce();
+student.calcAge();
