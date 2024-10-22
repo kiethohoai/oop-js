@@ -2,3 +2,4 @@
 004 OOP in JavaScript
 005 Constructor Functions and the new Operator
 006 Prototypes
+007 Prototypal Inheritance and The Prototype Chain
