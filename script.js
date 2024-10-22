@@ -420,7 +420,7 @@ student.introduce();
 student.calcAge(); */
 
 //todo 018 Inheritance Between Classes Object.create
-
+/* 
 const PersonProto = {
   init(fName, bYear) {
     this.fName = fName;
@@ -453,4 +453,16 @@ const jay = Object.create(StudentProto);
 jay.init('Jay', 2000, 'Computer Science');
 console.log(`🚀  jay =>`, jay);
 jay.introduce();
-jay.caclAge();
+jay.caclAge(); */
+
+//todo 019 Another Class Example
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+  }
+}
+
+const acc1 = new Account('Jonas', 'EUR', 1);
