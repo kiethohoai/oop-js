@@ -210,6 +210,7 @@ Person.hey = function () {
 };
 Person.hey(); */
 
+/* 
 //todo 013 Object.create
 const PersonProto = {
   calcAge() {
@@ -234,3 +235,54 @@ const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1997);
 console.log(`🚀  sarah =>`, sarah);
 sarah.calcAge();
+ */
+
+/* 
+const PersonPrototype = {
+  init(fName, bYear) {
+    this.fName = fName;
+    this.bYear = bYear;
+  },
+
+  countAge() {
+    console.log(`Your age is: `, 2024 - this.bYear);
+  },
+};
+
+const mini = Object.create(PersonPrototype);
+mini.init('Nguyen Thi Lan Mai', 1997);
+console.log(`🚀  mini =>`, mini);
+mini.countAge(); */
+
+//todo 014 Coding Challenge #2
+class Car {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(`${this.make} Current Speed = ${this.speed}km/h`);
+  }
+
+  brake() {
+    this.speed -= 5;
+    console.log(`${this.make} Current Speed = ${this.speed}km/h`);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    return (this.speed = speed * 1.6);
+  }
+}
+
+// Data: Ford 120
+const ford = new Car('Ford', 120);
+console.log(`🚀  ford =>`, ford);
+console.log(`🚀speedUS ${ford.speedUS}mi/h`);
+ford.speedUS = 50;
+console.log(`🚀  ford =>`, ford);

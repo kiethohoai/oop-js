@@ -9,3 +9,4 @@
 011 Setters and Getters
 012 Static Methods
 013 Object.create
+014 Coding Challenge #2
