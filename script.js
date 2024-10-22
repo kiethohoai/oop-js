@@ -1,32 +1,32 @@
 'use strict';
 
 //todo 005 Constructor Functions and the new Operator
-const Person = function (fName, bYear) {
-  // Instance Properties
-  this.fName = fName;
-  this.bYear = bYear;
+// const Person = function (fName, bYear) {
+// Instance Properties
+// this.fName = fName;
+// this.bYear = bYear;
 
-  // Instance Methods (BAD PRACTICE)
-  // this.calcAge = function () {
-  //   console.log(2024 - this.bYear);
-  // };
-};
+// Instance Methods (BAD PRACTICE)
+// this.calcAge = function () {
+//   console.log(2024 - this.bYear);
+// };
+// };
 
 // Instance Methods
-Person.prototype.calcAge = function () {
-  console.log(2024 - this.bYear);
-};
+// Person.prototype.calcAge = function () {
+//   console.log(2024 - this.bYear);
+// };
 
-const john = new Person('John', 1994);
-const mini = new Person('Mini', 1997);
+// const john = new Person('John', 1994);
+// const mini = new Person('Mini', 1997);
 
 // console.log(`🚀  john =>`, john);
 // console.log(`🚀  mini =>`, mini);
 
-const jay = {
-  fName: 'Jay',
-  bYear: 2000,
-};
+// const jay = {
+//   fName: 'Jay',
+//   bYear: 2000,
+// };
 // console.log(jay instanceof Person); //False
 // console.log(john instanceof Person); //True
 
@@ -38,7 +38,7 @@ const jay = {
 // console.log(Person.prototype.isPrototypeOf(Person)); //False
 // john.calcAge();
 
-Person.prototype.species = 'Homo Sapiens';
+// Person.prototype.species = 'Homo Sapiens';
 // console.log(john, mini);
 // console.log(john.species, mini.species);
 
@@ -72,6 +72,7 @@ console.dir(h1);
  */
 
 //todo 009 Coding Challenge #1
+/* 
 const Car = function (make, speed) {
   this.make = make;
   this.speed = speed;
@@ -103,4 +104,39 @@ mer.accelerate();
 mer.accelerate();
 mer.brake();
 mer.accelerate();
-mer.accelerate();
+mer.accelerate(); */
+
+//todo 010 ES6 Classes
+class PersonCl {
+  constructor(fName, bYear) {
+    this.fName = fName;
+    this.bYear = bYear;
+  }
+
+  // Methods will be added to the prototype properties
+  caclAge() {
+    console.log(2024 - this.bYear);
+  }
+
+  getName() {
+    console.log(`My name is: ${this.fName}`);
+  }
+
+  greet() {
+    console.log(`Hello ${this.fName}`);
+  }
+}
+
+const john = new PersonCl('John Ho', 1994);
+console.log(`🚀  john =>`, john);
+john.getName();
+john.caclAge();
+console.log(john.__proto__ === PersonCl.prototype); //True
+console.log(john.__proto__);
+console.log(PersonCl.prototype);
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hello ${this.fName}`);
+// };
+
+john.greet();

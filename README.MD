@@ -5,3 +5,4 @@
 007 Prototypal Inheritance and The Prototype Chain
 008 Prototypal Inheritance on Built-In Objects
 009 Coding Challenge #1
+010 ES6 Classes
