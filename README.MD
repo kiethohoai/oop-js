@@ -13,3 +13,4 @@
 015 Inheritance Between Classes Constructor Functions
 016 Coding Challenge #3
 017 Inheritance Between Classes ES6 Classes
+018 Inheritance Between Classes Object.create

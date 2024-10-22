@@ -374,7 +374,7 @@ tesla.accelerate();
  */
 
 //todo 017 Inheritance Between Classes ES6 Classes
-
+/* 
 class PersonCl {
   constructor(fName, bYear) {
     this.fName = fName;
@@ -417,4 +417,40 @@ class StudentCl extends PersonCl {
 const student = new StudentCl('John', 1994, 'Fullstacks Web Developer');
 console.log(`🚀  student =>`, student);
 student.introduce();
-student.calcAge();
+student.calcAge(); */
+
+//todo 018 Inheritance Between Classes Object.create
+
+const PersonProto = {
+  init(fName, bYear) {
+    this.fName = fName;
+    this.bYear = bYear;
+  },
+
+  caclAge() {
+    console.log(2024 - this.bYear);
+  },
+};
+
+const steven = Object.create(PersonProto);
+
+const StudentProto = Object.create(PersonProto);
+
+StudentProto.init = function (fName, bYear, course) {
+  PersonProto.init.call(this, fName, bYear);
+  this.course = course;
+};
+
+StudentProto.introduce = function () {
+  console.log(
+    `My name is ${this.fName} and I am ${
+      2024 - this.bYear
+    } years old. I am studying ${this.course}`
+  );
+};
+
+const jay = Object.create(StudentProto);
+jay.init('Jay', 2000, 'Computer Science');
+console.log(`🚀  jay =>`, jay);
+jay.introduce();
+jay.caclAge();
