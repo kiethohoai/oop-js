@@ -18,3 +18,4 @@
 020 Encapsulation Protected Properties and Methods
 021 Encapsulation Private Class Fields and Methods
 022 Chaining Methods
+023 ES6 Classes Summary

@@ -470,6 +470,7 @@ const acc1 = new Account('Jonas', 'EUR', 1); */
 //todo 020 Encapsulation Protected Properties and Methods
 //todo 021 Encapsulation Private Class Fields and Methods
 //todo 022 Chaining Methods
+//todo 023 ES6 Classes Summary
 
 class Person {
   //1) Public fields (instances)
