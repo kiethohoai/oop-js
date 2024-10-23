@@ -16,3 +16,4 @@
 018 Inheritance Between Classes Object.create
 019 Another Class Example
 020 Encapsulation Protected Properties and Methods
+021 Encapsulation Private Class Fields and Methods

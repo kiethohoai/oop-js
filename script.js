@@ -468,3 +468,51 @@ class Account {
 const acc1 = new Account('Jonas', 'EUR', 1); */
 
 //todo 020 Encapsulation Protected Properties and Methods
+//todo 021 Encapsulation Private Class Fields and Methods
+
+class Person {
+  //1) Public fields (instances)
+  _phone = '0935664313';
+  _address = 'Thua Thien Hue';
+
+  //2) Private fields
+  #username;
+  #pin;
+
+  constructor(fName, bYear, username, pin) {
+    this._fName = fName;
+    this._bYear = bYear;
+    this.#username = username;
+    this.#pin = pin;
+  }
+
+  // Public methods
+  getFullName() {
+    console.log(`My name's ${this._fName}`);
+  }
+
+  getAge() {
+    console.log(`I am ${2024 - this._bYear} years old!`);
+  }
+
+  getAccount() {
+    console.log(`Your username: `, this.#username);
+    console.log(`Your pin: `, this.#pin);
+  }
+
+  // Private methods
+  #getPhoneNumber() {
+    console.log(`Your phone number is: `, this._phone);
+  }
+}
+
+const john = new Person('John', 1994, 'john', 1111);
+console.log(`🚀  john =>`, john);
+john.getAccount();
+
+/* Private fields (Can't access!)
+john.#username;
+john.#pin; */
+
+/* Can't access cause getPhoneNumber is Private Method
+john.getPhoneNumber(); */
