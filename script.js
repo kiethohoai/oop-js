@@ -456,7 +456,7 @@ jay.introduce();
 jay.caclAge(); */
 
 //todo 019 Another Class Example
-
+/* 
 class Account {
   constructor(owner, currency, pin) {
     this.owner = owner;
@@ -465,4 +465,6 @@ class Account {
   }
 }
 
-const acc1 = new Account('Jonas', 'EUR', 1);
+const acc1 = new Account('Jonas', 'EUR', 1); */
+
+//todo 020 Encapsulation Protected Properties and Methods

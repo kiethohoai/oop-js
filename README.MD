@@ -15,3 +15,4 @@
 017 Inheritance Between Classes ES6 Classes
 018 Inheritance Between Classes Object.create
 019 Another Class Example
+020 Encapsulation Protected Properties and Methods
