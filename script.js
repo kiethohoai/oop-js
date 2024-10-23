@@ -469,11 +469,13 @@ const acc1 = new Account('Jonas', 'EUR', 1); */
 
 //todo 020 Encapsulation Protected Properties and Methods
 //todo 021 Encapsulation Private Class Fields and Methods
+//todo 022 Chaining Methods
 
 class Person {
   //1) Public fields (instances)
   _phone = '0935664313';
   _address = 'Thua Thien Hue';
+  _balance = [];
 
   //2) Private fields
   #username;
@@ -500,6 +502,16 @@ class Person {
     console.log(`Your pin: `, this.#pin);
   }
 
+  deposit(value) {
+    this._balance.push(value);
+    return this;
+  }
+
+  withdraw(value) {
+    this._balance.push(-value);
+    return this;
+  }
+
   // Private methods
   #getPhoneNumber() {
     console.log(`Your phone number is: `, this._phone);
@@ -507,8 +519,7 @@ class Person {
 }
 
 const john = new Person('John', 1994, 'john', 1111);
-console.log(`🚀  john =>`, john);
-john.getAccount();
+// john.getAccount();
 
 /* Private fields (Can't access!)
 john.#username;
@@ -516,3 +527,14 @@ john.#pin; */
 
 /* Can't access cause getPhoneNumber is Private Method
 john.getPhoneNumber(); */
+
+// Chain
+john
+  .deposit(100)
+  .deposit(200)
+  .deposit(300)
+  .withdraw(400)
+  .withdraw(500)
+  .withdraw(600);
+
+console.log(`🚀  john =>`, john);
